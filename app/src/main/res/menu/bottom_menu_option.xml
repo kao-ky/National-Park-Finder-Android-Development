@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/findParksFragment"
+        android:title="Find Parks"
+        android:icon="@drawable/ic_search" />
+    <item
+        android:id="@+id/itineraryFragment"
+        android:title="Itinerary"
+        android:icon="@drawable/ic_itinerary" />
+</menu>

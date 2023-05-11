@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/findParksFragment">
+
+    <fragment
+        android:id="@+id/findParksFragment"
+        android:name="com.example.project_g01.fragments.FindParksFragment"
+        android:label="fragment_find_parks"
+        tools:layout="@layout/fragment_find_parks" >
+        <action
+            android:id="@+id/action_findParksFragment_to_parkDetailsFragment"
+            app:destination="@id/parkDetailsFragment" />
+        <action
+            android:id="@+id/action_findParksFragment_to_itineraryFragment"
+            app:destination="@id/itineraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itineraryFragment"
+        android:name="com.example.project_g01.fragments.ItineraryFragment"
+        android:label="fragment_itinerary"
+        tools:layout="@layout/fragment_itinerary" >
+        <action
+            android:id="@+id/action_itineraryFragment_to_itineraryDetailsFragment"
+            app:destination="@id/itineraryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parkDetailsFragment"
+        android:name="com.example.project_g01.fragments.ParkDetailsFragment"
+        android:label="fragment_park_details"
+        tools:layout="@layout/fragment_park_details" >
+        <action
+            android:id="@+id/action_parkDetailsFragment_to_itineraryFragment"
+            app:destination="@id/itineraryFragment" />
+        <argument
+            android:name="selectedPark"
+            app:argType="com.example.project_g01.models.ShowingPark" />
+    </fragment>
+    <fragment
+        android:id="@+id/itineraryDetailsFragment"
+        android:name="com.example.project_g01.fragments.ItineraryDetailsFragment"
+        android:label="fragment_itinerary_details"
+        tools:layout="@layout/fragment_itinerary_details" >
+        <argument
+            android:name="itinerary"
+            app:argType="com.example.project_g01.models.Itinerary" />
+        <action
+            android:id="@+id/action_itineraryDetailsFragment_to_itineraryFragment"
+            app:destination="@id/itineraryFragment" />
+    </fragment>
+</navigation>
